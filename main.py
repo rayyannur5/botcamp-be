@@ -42,22 +42,22 @@ def predict_channel(freq, freq_pair, latitude, longitude):
 #     return street_view_url
 
 
-@app.get('/')
-def mainpage():
-    return render_template('index.html')
+# @app.get('/')
+# def mainpage():
+#     return render_template('index.html')
 
 
-@app.route('/<path:name>')
-def return_flutter_doc(name):
+# @app.route('/<path:name>')
+# def return_flutter_doc(name):
 
-    datalist = str(name).split('/')
-    DIR_NAME = 'templates'
+#     datalist = str(name).split('/')
+#     DIR_NAME = 'templates'
 
-    if len(datalist) > 1:
-        for i in range(0, len(datalist) - 1):
-            DIR_NAME += '/' + datalist[i]
+#     if len(datalist) > 1:
+#         for i in range(0, len(datalist) - 1):
+#             DIR_NAME += '/' + datalist[i]
 
-    return send_from_directory(DIR_NAME, datalist[-1])
+#     return send_from_directory(DIR_NAME, datalist[-1])
 
 
 # Route untuk handling permintaan chatbot
