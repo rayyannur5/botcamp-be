@@ -90751,7 +90751,7 @@ s($,"aQo","dq",()=>A.fp(A.avN(A.b([1],t.t)).buffer,0,null).getInt8(0)===1?B.ao:B
 s($,"aTP","FR",()=>new A.Z9(A.y(t.N,A.al("l0"))))
 r($,"aTj","apn",()=>B.zt)
 s($,"aU7","atj",()=>new A.a7Y())
-r($,"aPP","Xb",()=>A.aEV(A.apF("http://127.0.0.1:5000")))
+r($,"aPP","Xb",()=>A.aEV(A.apF("http://127.0.0.1")))
 s($,"aSR","aC2",()=>A.ar1(1,1,500))
 s($,"aTT","aCJ",()=>new A.Pe())
 s($,"aTa","aCi",()=>A.h6(B.cN,B.h,t.EP))
