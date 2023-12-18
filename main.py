@@ -142,7 +142,7 @@ def chatbot():
         # result = np.array(hasil[0]).argmax()
         
         # if result == 1:
-        text_response = 'Berikut hasil prediksi kanal kosong \nTidak tersedia : ' + str(round(hasil[0][1]*100, 2)) + '%\nTersedia dengan pertimbangan : ' + str(round(hasil[0][2]*100, 2)) + '%\nTersedia : ' + str(round(hasil[0][3]*100, 2)) + '%'
+        text_response = 'Berikut hasil prediksi kanal kosong \nTersedia : ' + str(round(hasil[0][1]*100, 2)) + '%\nTersedia dengan pertimbangan : ' + str(round(hasil[0][2]*100, 2)) + '%\nTidak Tersedia : ' + str(round(hasil[0][3]*100, 2)) + '%'
         # text_response = str(hasil)
         json_response = {
             'message' : text_response,
