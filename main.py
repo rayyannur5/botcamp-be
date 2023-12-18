@@ -14,7 +14,7 @@ app = Flask(__name__)
 database = {}
 
 
-model = tf.keras.models.load_model('modelv2_ringan')
+model = tf.keras.models.load_model('modelv2')
 
 
 # Fungsi untuk melakukan prediksi kanal
@@ -139,35 +139,35 @@ def chatbot():
         
         hasil = predict_channel(database[token]['freq'], database[token]['freq-pair'], database[token]['lat'], database[token]['lon'])
         
-        result = np.array(hasil[0]).argmax()
+        # result = np.array(hasil[0]).argmax()
         
-        if result == 1:
-            text_response = 'Berikut hasil prediksi kanal kosong \nDisetujui : ' + str(round(hasil[0][1]*100, 2)) + '%'
-            # text_response = str(hasil)
-            json_response = {
-                'message' : text_response,
-                'shortcut' : [
-                    'Silahkan melanjutkan registrasi di Kominfo',
-                    'Selesai'
-                ],
-                'link' : 'https://isr.postel.go.id/'
-            }
-        elif result == 2:
-            text_response = 'Berikut hasil prediksi kanal kosong \nDisetujui dengan pertimbangan : ' + str(round(hasil[0][2]*100, 2)) + '%'
-            json_response = {
-                'message' : text_response,
-                'shortcut' : [
-                    'selesai'
-                ]
-            }
-        elif result == 3:
-            text_response = 'Berikut hasil prediksi kanal kosong \nDibatalkan : ' + str(round(hasil[0][3]*100, 2)) + '%'
-            json_response = {
-                'message' : text_response,
-                'shortcut' : [
-                    'selesai'
-                ]
-            }
+        # if result == 1:
+        text_response = 'Berikut hasil prediksi kanal kosong \nTidak tersedia : ' + str(round(hasil[0][1]*100, 2)) + '%\nTersedia dengan pertimbangan : ' + str(round(hasil[0][2]*100, 2)) + '%\nTersedia : ' + str(round(hasil[0][3]*100, 2)) + '%'
+        # text_response = str(hasil)
+        json_response = {
+            'message' : text_response,
+            'shortcut' : [
+                'Silahkan melanjutkan registrasi di Kominfo',
+                'Selesai'
+            ],
+            'link' : 'https://isr.postel.go.id/'
+        }
+        # elif result == 2:
+        #     text_response = 'Berikut hasil prediksi kanal kosong \nDisetujui dengan pertimbangan : ' + str(round(hasil[0][2]*100, 2)) + '%'
+        #     json_response = {
+        #         'message' : text_response,
+        #         'shortcut' : [
+        #             'selesai'
+        #         ]
+        #     }
+        # elif result == 3:
+        #     text_response = 'Berikut hasil prediksi kanal kosong \nDibatalkan : ' + str(round(hasil[0][3]*100, 2)) + '%'
+        #     json_response = {
+        #         'message' : text_response,
+        #         'shortcut' : [
+        #             'selesai'
+        #         ]
+        #     }
      
     else:
         text_response =  "Selamat datang!, Silahkan pilih menu bantuan"
