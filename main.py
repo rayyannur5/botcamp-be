@@ -99,7 +99,7 @@ def chatbot():
 
         return response
     elif 'cek kanal' in message:
-        text_response = "Please enter frequency (in Hz):"
+        text_response = "Silahkan masukkan Frekuensi (dalam satuan Hz):"
         json_response = {
             "message": text_response,
             "assist" : "freq",
@@ -111,7 +111,7 @@ def chatbot():
         print(message[4:])
         database[token]['freq'] = float(str(message[4:]))
         # print(database)
-        text_response = "Nilai frekuensi diterima, masukkan frekuensi pair"
+        text_response = "Nilai frekuensi diterima, masukkan Frekuensi Pair"
         json_response = {
             "message": text_response,
             "shortcut":[
@@ -123,11 +123,11 @@ def chatbot():
         print(message[4:])
         database[token]['freq-pair'] = float(str(message[4:]))
         # print(database)
-        text_response = "Nilai frekuensi pair diterima, selanjutnya silakan pilih titik point pada peta"
+        text_response = "Nilai frekuensi pair diterima, selanjutnya silahkan masukkan koordinat Latitude dan Longitude lokasi Anda!"
         json_response = {
             "message": text_response,
             "shortcut":[
-                'Buka peta',
+                'Ambil titik poin dari peta',
                 'Batalkan'
             ],
             "assist" : 'latlng'
@@ -148,7 +148,7 @@ def chatbot():
                 'message' : text_response,
                 'shortcut' : [
                     'Silahkan melanjutkan registrasi di Kominfo',
-                    'selesai'
+                    'Selesai'
                 ],
                 'link' : 'https://isr.postel.go.id/'
             }
@@ -170,7 +170,7 @@ def chatbot():
             }
      
     else:
-        text_response =  "Selamat pagi!, Silahkan pilih menu bantuan"
+        text_response =  "Selamat datang!, Silahkan pilih menu bantuan"
         json_response = {
             "message": text_response,
             "shortcut" : [
